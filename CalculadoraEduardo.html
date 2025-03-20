@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Conversão</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Pirata One', cursive;
+            background: linear-gradient(135deg, #005B96, #3A539B);
+            color: #FFF9C4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('https://c4.wallpaperflare.com/wallpaper/357/953/268/one-piece-anime-monkey-d-luffy-wallpaper-preview.jpg'); 
+            background-size: cover;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1100px;
+            width: 100%;
+            gap: 20px;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 15px;
+            border: 3px solid #FFD700;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-weight: 500;
+            font-size: 26px;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #FFD700;
+        }
+
+        select, input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #FFD700;
+            transition: background-color 0.3s ease-in-out;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        select:focus, input[type="text"]:focus {
+            background-color: rgba(255, 255, 255, 0.4);
+            outline: none;
+        }
+
+        button {
+            width: 48%;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            background-color: #FF4500;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 20px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        button:hover {
+            background-color: #FF6347;
+        }
+
+        .results {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .results div {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            font-size: 16px;
+            transition: transform 0.3s ease;
+            color: #FFD700;;
+        }
+
+        .results div:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @media (max-width: 1100px) {
+            .wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="container">
+            <h1>Conversor de Bases Numéricas</h1>
+
+            <label for="tipoNumero">Escolha o tipo de número:</label>
+            <select id="tipoNumero">
+                <option value="hex">Hexadecimal</option>
+                <option value="bin">Binário</option>
+                <option value="oct">Octal</option>
+                <option value="dec">Decimal</option>
+            </select>
+
+            <label for="numero">Digite o número:</label>
+            <input type="text" id="numero" placeholder="Digite o número">
+
+            <button onclick="converter()">Converter</button>
+
+            <div class="results">
+                <div id="binario"></div>
+                <div id="octal"></div>
+                <div id="decimal"></div>
+                <div id="hexadecimal"></div>
+            </div>
+        </div>
+
+        <div class="container">
+            <h1>Operações com Bases Numéricas</h1>
+
+            <label for="tipoNumero1">Escolha o tipo do primeiro número:</label>
+            <select id="tipoNumero1">
+                <option value="hex">Hexadecimal</option>
+                <option value="bin">Binário</option>
+                <option value="oct">Octal</option>
+                <option value="dec">Decimal</option>
+            </select>
+
+            <label for="numero1">Digite o primeiro número:</label>
+            <input type="text" id="numero1" placeholder="Digite o primeiro número">
+
+            <label for="tipoNumero2">Escolha o tipo do segundo número:</label>
+            <select id="tipoNumero2">
+                <option value="hex">Hexadecimal</option>
+                <option value="bin">Binário</option>
+                <option value="oct">Octal</option>
+                <option value="dec">Decimal</option>
+            </select>
+
+            <label for="numero2">Digite o segundo número:</label>
+            <input type="text" id="numero2" placeholder="Digite o segundo número">
+
+            <div class="btn-group">
+                <button onclick="operacao('somar')">Somar</button>
+                <button onclick="operacao('subtrair')">Subtrair</button>
+            </div>
+
+            <div class="results">
+                <div id="binario2"></div>
+                <div id="octal2"></div>
+                <div id="decimal2"></div>
+                <div id="hexadecimal2"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function converter() {
+        let tipoNumero = document.getElementById("tipoNumero").value;
+        let numero = document.getElementById("numero").value.trim();
+
+        let binario, octal, decimal, hexadecimal;
+
+        try {
+            if (tipoNumero === "hex") {
+                decimal = parseInt(numero, 16);
+                binario = decimal.toString(2);
+                octal = decimal.toString(8);
+                hexadecimal = numero.toUpperCase();
+            } else if (tipoNumero === "bin") {
+                decimal = parseInt(numero, 2);
+                binario = numero;
+                octal = decimal.toString(8);
+                hexadecimal = decimal.toString(16).toUpperCase();
+            } else if (tipoNumero === "oct") {
+                decimal = parseInt(numero, 8);
+                binario = decimal.toString(2);
+                octal = numero;
+                hexadecimal = decimal.toString(16).toUpperCase();
+            } else if (tipoNumero === "dec") {
+                decimal = parseInt(numero, 10);
+                binario = decimal.toString(2);
+                octal = decimal.toString(8);
+                hexadecimal = decimal.toString(16).toUpperCase();
+            } else {
+                alert("Selecione uma opção válida!");
+                return;
+            }
+
+            document.getElementById("binario").innerHTML = "Binário: " + binario;
+            document.getElementById("octal").innerHTML = "Octal: " + octal;
+            document.getElementById("decimal").innerHTML = "Decimal: " + decimal;
+            document.getElementById("hexadecimal").innerHTML = "Hexadecimal: " + hexadecimal;
+        } catch (e) {
+            alert("Erro na conversão. Verifique o número inserido.");
+        }
+    }
+
+    function operacao(tipoOperacao) {
+        let tipoNumero1 = document.getElementById("tipoNumero1").value;
+        let tipoNumero2 = document.getElementById("tipoNumero2").value;
+        let numero1 = document.getElementById("numero1").value.trim();
+        let numero2 = document.getElementById("numero2").value.trim();
+
+        let base1 = getBase(tipoNumero1);
+        let base2 = getBase(tipoNumero2);
+
+        let decNum1 = parseInt(numero1, base1);
+        let decNum2 = parseInt(numero2, base2);
+
+        let resultadoDecimal;
+
+        if (tipoOperacao == 'somar') {
+            resultadoDecimal = decNum1 + decNum2;
+        } else if (tipoOperacao == 'subtrair') {
+            resultadoDecimal = decNum1 - decNum2;
+        }
+
+        let binario = resultadoDecimal.toString(2);
+        let octal = resultadoDecimal.toString(8);
+        let hexadecimal = resultadoDecimal.toString(16).toUpperCase();
+
+        document.getElementById("binario2").innerHTML = "Binário: " + binario;
+        document.getElementById("octal2").innerHTML = "Octal: " + octal;
+        document.getElementById("decimal2").innerHTML = "Decimal: " + resultadoDecimal;
+        document.getElementById("hexadecimal2").innerHTML = "Hexadecimal: " + hexadecimal;
+    }
+
+    function getBase(tipoNumero) {
+        switch (tipoNumero) {
+            case "hex":
+                return 16;
+            case "bin":
+                return 2;
+            case "oct":
+                return 8;
+            case "dec":
+                return 10;
+            default:
+                return 10;
+        }
+    }
+</script>
