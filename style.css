@@ -36,8 +36,10 @@
     height: 900px;
     width: 450px;
     text-align: center;
-    background-image: url('https://pbs.twimg.com/media/GV19qK2WAAAVuoj?format=jpg&name=large');
-
+    background-image: url('rodrygo.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
 
 .container2 {
@@ -49,8 +51,10 @@
     max-width: 450px;
     width: 100%;
     text-align: center;
-    background-image: url('https://pbs.twimg.com/media/GV19qK2WAAAVuoj?format=jpg&name=large');
-
+    background-image: url('endrick.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
 }
 
 h1 {
