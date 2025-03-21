@@ -3,136 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Calculadora de Conversão</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Pirata One', cursive;
-            background: linear-gradient(135deg, #005B96, #3A539B);
-            color: #FFF9C4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-image: url('https://c4.wallpaperflare.com/wallpaper/357/953/268/one-piece-anime-monkey-d-luffy-wallpaper-preview.jpg'); 
-            background-size: cover;
-        }
-
-        .wrapper {
-            display: flex;
-            justify-content: space-between;
-            max-width: 1100px;
-            width: 100%;
-            gap: 20px;
-        }
-
-        .container {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 40px;
-            border-radius: 15px;
-            border: 3px solid #FFD700;
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
-            max-width: 500px;
-            width: 100%;
-            text-align: center;
-        }
-
-        h1 {
-            margin-bottom: 30px;
-            font-weight: 500;
-            font-size: 26px;
-            color: #FFD700;
-            text-shadow: 2px 2px 4px #000;
-        }
-
-        label {
-            display: block;
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #FFD700;
-        }
-
-        select, input[type="text"] {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            border: none;
-            font-size: 16px;
-            background-color: rgba(255, 255, 255, 0.2);
-            color: #FFD700;
-            transition: background-color 0.3s ease-in-out;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        select:focus, input[type="text"]:focus {
-            background-color: rgba(255, 255, 255, 0.4);
-            outline: none;
-        }
-
-        button {
-            width: 48%;
-            padding: 12px;
-            font-size: 16px;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            background-color: #FF4500;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin-bottom: 20px;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        button:hover {
-            background-color: #FF6347;
-        }
-
-        .results {
-            margin-top: 20px;
-            text-align: left;
-        }
-
-        .results div {
-            padding: 10px;
-            margin-bottom: 10px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            font-size: 16px;
-            transition: transform 0.3s ease;
-            color: #FFD700;;
-        }
-
-        .results div:hover {
-            transform: translateY(-5px);
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-group {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        @media (max-width: 1100px) {
-            .wrapper {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .container {
-                max-width: 100%;
-            }
-        }
-    </style>
 </head>
 <body>
 
+    <div class="real">
     <div class="wrapper">
         <div class="container">
             <h1>Conversor de Bases Numéricas</h1>
@@ -158,7 +34,7 @@
             </div>
         </div>
 
-        <div class="container">
+        <div class="container2">
             <h1>Operações com Bases Numéricas</h1>
 
             <label for="tipoNumero1">Escolha o tipo do primeiro número:</label>
@@ -196,6 +72,7 @@
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>
 
