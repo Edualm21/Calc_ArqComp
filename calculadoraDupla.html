@@ -1,80 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Calculadora de Conversão</title>
 </head>
+
 <body>
 
     <div class="real">
-        <div class="nav"></div>
-    <div class="wrapper">
-        <div class="container">
-            <h1>Conversor de Bases Numéricas</h1>
+        <div class="wrapper">
+            <div class="container">
 
-            <label for="tipoNumero">Escolha o tipo de número:</label>
-            <select id="tipoNumero">
-                <option value="hex">Hexadecimal</option>
-                <option value="bin">Binário</option>
-                <option value="oct">Octal</option>
-                <option value="dec">Decimal</option>
-            </select>
+                <h1>Conversor de Bases Numéricas</h1>
 
-            <label for="numero">Digite o número:</label>
-            <input type="text" id="numero" placeholder="Digite o número">
+                <label for="tipoNumero">Escolha o tipo de número:</label>
 
-            <button onclick="converter()">Converter</button>
+                <select id="tipoNumero">
+                    <option value="hex">Hexadecimal</option>
+                    <option value="bin">Binário</option>
+                    <option value="oct">Octal</option>
+                    <option value="dec">Decimal</option>
+                </select>
 
-            <div class="results">
-                <div id="binario"></div>
-                <div id="octal"></div>
-                <div id="decimal"></div>
-                <div id="hexadecimal"></div>
-            </div>
-        </div>
+                <label for="numero">Digite o número:</label>
+                <input type="text" id="numero" placeholder="Digite o número">
 
-        <div class="container2">
-            <h1>Operações com Bases Numéricas</h1>
+                <button onclick="converter()">Converter</button>
 
-            <label for="tipoNumero1">Escolha o tipo do primeiro número:</label>
-            <select id="tipoNumero1">
-                <option value="hex">Hexadecimal</option>
-                <option value="bin">Binário</option>
-                <option value="oct">Octal</option>
-                <option value="dec">Decimal</option>
-            </select>
-
-            <label for="numero1">Digite o primeiro número:</label>
-            <input type="text" id="numero1" placeholder="Digite o primeiro número">
-
-            <label for="tipoNumero2">Escolha o tipo do segundo número:</label>
-            <select id="tipoNumero2">
-                <option value="hex">Hexadecimal</option>
-                <option value="bin">Binário</option>
-                <option value="oct">Octal</option>
-                <option value="dec">Decimal</option>
-            </select>
-
-            <label for="numero2">Digite o segundo número:</label>
-            <input type="text" id="numero2" placeholder="Digite o segundo número">
-
-            <div class="btn-group">
-                <button onclick="operacao('somar')">Somar</button>
-                <button onclick="operacao('subtrair')">Subtrair</button>
+                <div class="results">
+                    <div id="binario"></div>
+                    <div id="octal"></div>
+                    <div id="decimal"></div>
+                    <div id="hexadecimal"></div>
+                </div>
             </div>
 
-            <div class="results">
-                <div id="binario2"></div>
-                <div id="octal2"></div>
-                <div id="decimal2"></div>
-                <div id="hexadecimal2"></div>
+
+
+            <div class="container2">
+                <h1>Operações com Bases Numéricas</h1>
+
+                <label for="tipoNumero1">Escolha o tipo do primeiro número:</label>
+                
+                <select id="tipoNumero1">
+                    <option value="hex">Hexadecimal</option>
+                    <option value="bin">Binário</option>
+                    <option value="oct">Octal</option>
+                    <option value="dec">Decimal</option>
+                </select>
+
+                <label for="numero1">Digite o primeiro número:</label>
+                <input type="text" id="numero1" placeholder="Digite o primeiro número">
+
+                <label for="tipoNumero2">Escolha o tipo do segundo número:</label>
+                <select id="tipoNumero2">
+                    <option value="hex">Hexadecimal</option>
+                    <option value="bin">Binário</option>
+                    <option value="oct">Octal</option>
+                    <option value="dec">Decimal</option>
+                </select>
+
+                <label for="numero2">Digite o segundo número:</label>
+                <input type="text" id="numero2" placeholder="Digite o segundo número">
+
+                <div class="btn-group">
+                    <button onclick="operacao('somar')">Somar</button>
+                    <button onclick="operacao('subtrair')">Subtrair</button>
+                </div>
+
+                <div class="results">
+                    <div id="binario2"></div>
+                    <div id="octal2"></div>
+                    <div id="decimal2"></div>
+                    <div id="hexadecimal2"></div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </body>
+
 </html>
 
 <script>

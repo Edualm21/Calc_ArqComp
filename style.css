@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.real{
+.real {
     font-family: 'Pirata One', cursive;
     background: linear-gradient(135deg, #005B96, #3A539B);
     color: #FFF9C4;
@@ -12,7 +12,7 @@
     justify-content: center;
     align-items: center;
     height: 1100px;
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE0ZEM0Spbv4-MtOZfsnptKosA4SUsYtyBuw&s'); 
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE0ZEM0Spbv4-MtOZfsnptKosA4SUsYtyBuw&s');
     background-size: cover;
     margin-left: -20px;
 }
@@ -37,9 +37,9 @@
     width: 450px;
     text-align: center;
     background-image: url('rodrygo.jpg');
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .container2 {
@@ -52,9 +52,9 @@
     width: 100%;
     text-align: center;
     background-image: url('endrick.jpg');
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 h1 {
@@ -72,7 +72,8 @@ label {
     color: #DEDBDB;
 }
 
-select, input[type="text"] {
+select,
+input[type="text"] {
     width: 100%;
     padding: 12px;
     margin-bottom: 20px;
@@ -85,7 +86,8 @@ select, input[type="text"] {
     box-shadow: 0px 4px 8px black;
 }
 
-select:focus, input[type="text"]:focus {
+select:focus,
+input[type="text"]:focus {
     background-color: ghostwhite;
     outline: none;
     transition: 0.4s;
